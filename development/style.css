@@ -1,0 +1,223 @@
+/**************************************************/
+/* CSS RESET
+/**************************************************/
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/**************************************************/
+/* FONTS
+/**************************************************/
+
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/outfit-v11-latin-ext-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/outfit-v11-latin-ext-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/**************************************************/
+/* VARIABLES
+/**************************************************/
+
+:root {
+    --slate_900: #1F314F;
+    --slate_500: #68778D;
+    --slate_300: #D5E1EF;
+    --blue: #2C7DFA;
+    --lightblue: #3685FF;
+    --white: #fff;
+}
+
+
+/**************************************************/
+/* BODY
+/**************************************************/
+
+html,
+:root {
+    font-size: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--slate_300);
+    font-family: 'Outfit';
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+/**************************************************/
+/* TYPOGRAPHY
+/**************************************************/
+
+p {
+    color: var(--slate_500);
+    font-size: 1.5rem;
+    letter-spacing: .02rem;
+    line-height: 140%;
+    margin-bottom: 0;
+}
+
+.p--large {
+    color: var(--slate_900);
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 120%;
+    margin-bottom: 1.6rem;
+}
+
+
+/**************************************************/
+/* COMPONENT
+/**************************************************/
+
+.card-component {
+    background-color: var(--white);
+    max-width: 32rem;
+    padding: 1.6rem 1.6rem 4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.0476518);
+    box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.0476518);
+    border-radius: 2rem;
+    gap: 2.4rem;
+    text-align: center;
+}
+
+.card-component__qr {
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    aspect-ratio: 1 / 1;
+    background-color: var(--blue);
+    border-radius: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.card-component__qr img {
+    height: auto;
+    max-width: 16rem;
+}
+
+.card-component__qr::before,
+.card-component__qr::after {
+    background-color: var(--lightblue);
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+
+.card-component__qr::before {
+    height: 32.8rem;
+    left: calc(-50% + 3.2rem);
+    top: -50%;
+    width: 32.8rem;
+}
+
+.card-component__qr::after {
+    height: 27rem;
+    left: 13.15rem;
+    top: 20.45rem;
+    width: 27rem;
+}
+
+.card-component__desc {
+    padding: 0 1.6rem;
+}
